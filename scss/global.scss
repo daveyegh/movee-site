@@ -1,5 +1,5 @@
 
-$sm: 576px;
+$sm: 600px;
 $md: 800px;
 $lg: 992px;
 $xl: 1200px;
@@ -9,15 +9,29 @@ $xxl: 1400px;
     overflow: hidden;
 }
 
+.error {
+	border-color: red;
+}
+
+.error-message {
+	color: red;
+	font-style: italic;
+	margin-bottom: 1em;
+}
+
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     ul {
-        margin-left: 0;
+        padding-left: 0;
         list-style: none;
     }
+    button {
+        cursor:pointer;
+    }
     font-family: 'Montserrat', sans-serif;
+
 }
 
 .wrapper {
@@ -159,6 +173,13 @@ body {
                 img {
                     display: block;
                 }
+            }
+        }
+    }
+    @media screen and (max-width: 830px) {
+        .header {
+            &__block {
+                margin-bottom: 30px;
             }
         }
     }
@@ -349,6 +370,13 @@ body {
         line-height: 21px;
         color: #333333;
         
+    }
+    @media screen and (max-width: 650px) {
+        .how {
+            &__item {
+                width: 100%;
+            }
+        }
     }
     @media screen and (max-width: $sm) {
         .how {
@@ -565,6 +593,7 @@ body {
         justify-content: center;
         align-items: center;
         margin-right: 19px;
+        cursor: pointer;
         &.active {
             border: 1px solid #FED100;
         }
@@ -616,6 +645,22 @@ body {
         color: #333333;
         &.active {
             display: none;
+        }
+    }
+    @media screen and (max-width: 830px) {
+        .auto {
+            &__text {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                align-items: center;
+            }
+            &__list {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
         }
     }
     @media screen and (max-width: $md) {
@@ -753,6 +798,18 @@ body {
         text-decoration: none;
         border: 1px solid #333333;
         padding: 13px 64px;
+    }
+    @media screen and (max-width: $md) {
+        .review {
+            &__items {
+                margin-top: 30px;
+                flex-wrap: wrap;
+            }
+            &__item {
+                margin-top: 30px;
+                width: 100%;
+            }
+        }
     }
     @media screen and (max-width: $sm) {
         .review {

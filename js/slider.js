@@ -8,9 +8,6 @@ const autoSlider = new Swiper(autoSlide, {
         nextEl: '.auto-swiper-next',
         prevEl: '.auto-swiper-prev',
       },
-    autoplay: {
-        delay: 2000,
-    },
     breakpoints: {
         768: {
             slidesPerView: 1,
@@ -22,3 +19,21 @@ const autoSlider = new Swiper(autoSlide, {
         }
     }
 });
+
+// items .active class adding
+
+const buttons = document.querySelectorAll('.auto__filter .auto__filter-item');
+
+function buttonClass() {
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            if(button.classList.contains('active')) {
+                button.classList.remove('active');
+            } else {
+                button.classList.add('active');
+            }
+        });
+    });
+}
+
+buttonClass();
